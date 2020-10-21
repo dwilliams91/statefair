@@ -2,6 +2,7 @@ const contentTarget = document.querySelector(".entry")
 const eventHub = document.querySelector("#state-fair")
 import {useTickets} from './TicketDataProvider.js'
 
+// create an event li
 eventHub.addEventListener("click", event => {
     if (event.target.id === "rideTicket") {
         const rideEvent = new CustomEvent("rideTicketPurchased", {
@@ -23,7 +24,20 @@ eventHub.addEventListener("click", event => {
     }
 })
 
+eventHub.addEventListener("click", event=>{
+if (event.target.id==="gameTicket"){
+    console.log(event)
+    const gameEvent=new CustomEvent("gameTicketPurchased",{
+        detail:{
+            ticketBought:"Ticket"
+        }
+    })
+    eventHub.dispatchEvent(gameEvent)
 
+}
+
+
+})
 
 
 

@@ -10,6 +10,10 @@ const TicketClassCollection=[
     id:"foodTicket",
     text: "Food Ticket"
 },
+{div_class:"gameBooth",
+    id:"gameTicket",
+    text: "Game Ticket"
+},
 ]
 export const useTickets = () => {
     return TicketClassCollection.slice()

@@ -1,5 +1,6 @@
 const contentTarget = document.querySelector(".entry")
 const eventHub = document.querySelector("#state-fair")
+import {useTickets} from './TicketDataProvider.js'
 
 eventHub.addEventListener("click", event => {
     if (event.target.id === "rideTicket") {
@@ -13,10 +14,15 @@ eventHub.addEventListener("click", event => {
 })
 
 export const TicketBooth = () => {
-    contentTarget.innerHTML = `
-        <div class="ticketBooth">
-            <button id="rideTicket">Ride Ticket</button>
-        </div>
-    `
+    let createButtonsHTML=" "
+    let buttonClasses=useTickets()
+    for (const button of buttonClasses){
+        createButtonsHTML+=buttonHTMLCreator(button)
+    }
+    contentTarget.innerHTML = createButtonsHTML
 }
-
+const buttonHTMLCreator=(buttonObj)=>{
+    return `<div class="${buttonObj.div_class}">
+    <button id="${buttonObj.id}">${buttonObj.text}</button>
+</div>`
+}

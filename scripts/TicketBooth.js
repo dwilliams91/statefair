@@ -26,7 +26,6 @@ eventHub.addEventListener("click", event => {
 
 eventHub.addEventListener("click", event=>{
 if (event.target.id==="gameTicket"){
-    console.log(event)
     const gameEvent=new CustomEvent("gameTicketPurchased",{
         detail:{
             ticketBought:"Ticket"
@@ -35,9 +34,18 @@ if (event.target.id==="gameTicket"){
     eventHub.dispatchEvent(gameEvent)
 
 }
-
-
 })
+eventHub.addEventListener("click", event=>{
+    if (event.target.id==="sideshowTicket"){
+        const sideShowEvent=new CustomEvent("sideshowTicketPurchased",{
+            detail:{
+                ticketBought:"Ticket"
+            }
+        })
+        eventHub.dispatchEvent(sideShowEvent)
+    
+    }
+    })
 
 
 

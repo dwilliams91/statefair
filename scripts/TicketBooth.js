@@ -12,6 +12,20 @@ eventHub.addEventListener("click", event => {
         eventHub.dispatchEvent(rideEvent)
     }
 })
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "foodTicket") {
+        const foodEvent = new CustomEvent("foodTicketPurchased", {
+            detail: {
+            ticketBought: "Ticket"
+        }
+        })
+        eventHub.dispatchEvent(foodEvent)
+    }
+})
+
+
+
+
 
 export const TicketBooth = () => {
     let createButtonsHTML=" "

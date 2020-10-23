@@ -1,3 +1,5 @@
+import { counter } from "../TicketBooth.js"
+
 const eventHub=document.querySelector("#state-fair")
 const contentTarget=document.querySelector(".food")
 

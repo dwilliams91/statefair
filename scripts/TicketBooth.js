@@ -47,7 +47,17 @@ eventHub.addEventListener("click", event=>{
     }
     })
 
-
+    eventHub.addEventListener("click", event=>{
+        if (event.target.id==="fullPackageTicket"){
+            const fullPackageEvent=new CustomEvent("fullPackageTicketPurchased",{
+                detail:{
+                    ticketBought:"Ticket"
+                }
+            })
+            eventHub.dispatchEvent(fullPackageEvent)
+        
+        }
+        })
 
 export const TicketBooth = () => {
     let createButtonsHTML=" "

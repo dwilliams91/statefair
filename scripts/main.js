@@ -4,6 +4,7 @@ import {RideTicketHolders} from './rides/RideTicketHolders.js'
 import {foodTicketHolders} from './food/FoodTicketHolder.js'
 import {gameTicketHolders} from './games/GameTicketHolders.js'
 import {sideshowTicketHolders} from './sideshows/sideshowTicketHolder.js'
+import { FullPackageTicketHolders } from './FullPackage/FullPackageTicketHolder.js'
 
 const eventHub = document.querySelector("#state-fair")
 
@@ -12,3 +13,4 @@ RideTicketHolders()
 foodTicketHolders()
 gameTicketHolders()
 sideshowTicketHolders()
+FullPackageTicketHolders()

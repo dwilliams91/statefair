@@ -2,11 +2,12 @@ const eventHub=document.querySelector("#state-fair")
 const contentTarget=document.querySelector(".games")
 
 export const gameTicketHolders = () => {
-    let gameTicketToDisplay = ""
     eventHub.addEventListener("gameTicketPurchased", customEvent => {
-        console.log("The function is being invoked")
+
+        let gameTicketToDisplay = ""
 
         gameTicketToDisplay+=`<div class="person player"></div>`
-        contentTarget.innerHTML = gameTicketToDisplay
+        console.log(gameTicketToDisplay)
+        contentTarget.innerHTML += gameTicketToDisplay
     })
 }
